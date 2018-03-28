@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    countScore = 0;
 }
 
 
@@ -27,9 +27,18 @@
 
 
 - (IBAction)StartStop:(id)sender {
-    countDown = 3;
-    self.getReadyLabel.text = [NSString stringWithFormat:@"%i", countDown];
-    timerCountDown = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countingDown) userInfo:nil repeats:YES];
+    if (countScore == 0) {
+        countDown = 3;
+        self.getReadyLabel.text = [NSString stringWithFormat:@"%i", countDown];
+        timerCountDown = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countingDown) userInfo:nil repeats:YES];
+        [sender setTitle:@"Stop" forState:UIControlStateNormal];
+    } else {
+        [timerScore invalidate];
+    }
+    if (countDown == 0) {
+        countScore = 0;
+        [sender setTitle:@"Restart" forState:UIControlStateNormal];
+    }
 }
 
 -(void)countingDown {

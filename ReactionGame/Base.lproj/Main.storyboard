@@ -28,7 +28,8 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UHu-bD-QUc">
                                 <rect key="frame" x="16" y="105" width="343" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Start"/>
                                 <connections>
                                     <action selector="StartStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="usA-dn-IRj"/>
                                 </connections>
